@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Mangement Application</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ojuju:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form id="taskForm">
+        <h2>Task Implementation</h2>
+        <label for="title">Title:</label>
+        <input
+          type="text"
+          id="title"
+          required
+          placeholder=" Enter Your Title"
+        /><br />
+
+        <label for="description">Description:</label>
+        <input
+          type="text"
+          id="description"
+          required
+          placeholder="Describe Your Task"
+        /><br />
+
+        <label for="deadline">Deadline:</label>
+        <input
+          type="date"
+          id="deadline"
+          required
+          placeholder="Deadline"
+        /><br />
+
+        <label for="level">Priority Level :</label>
+        <input list="levels" name="level" id="priority" />
+        <datalist id="levels">
+          <option value="High"></option>
+          <option value="Medium"></option>
+          <option value="Low"></option></datalist
+        ><br />
+
+        <label for="categories">Category Task :</label>
+        <input list="categorie" name="level" id="category" />
+        <datalist id="categorie">
+          <option value="Personal"></option>
+          <option value="Work"></option>
+          <option value="School"></option>
+          <option value="Family"></option></datalist
+        ><br />
+
+        <h2>Task Managment</h2>
+        <button class="submit" type="submit">Add Task</button>
+      </form>
+
+      <hr />
+
+      <div id="taskTable">
+        <div>
+          <input
+            type="text"
+            id="searchInput"
+            oninput="searchTasks()"
+            placeholder="Search Your Tasks Here ......."
+          />
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Deadline</th>
+              <th>Priority</th>
+              <th>Category</th>
+              <th>Completed Task</th>
+              <th>Edit</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="taskList"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+    <!-- <script src="https://kit.fontawesome.com/b5d38cfb87.js" crossorigin="anonymous"></script> -->
+  </body>
+</html>
