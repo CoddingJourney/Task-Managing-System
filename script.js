@@ -27,26 +27,26 @@ function addTasks(e) {
   tasks.push(task);
   displayTask(task);
   taskForm.reset();
-  window.alert(upcoming + title);
+  alert(title);
 }
 
 //function to display task
 function displayTask(task) {
   const taskRow = document.createElement("tr"); //create an element tr
   taskRow.innerHTML = `
-    <td>${task.title}</td>
-    <td>${task.description}</td>
-    <td>${task.deadline}</td>
-    <td>${task.priority}</td>
-    <td>${task.category}</td>
-    <td>
-    <button class="btn btn-success" onclick="markAsCompleted(this)">
-    <i class="fa-solid fa-circle-check"></i>
-    </button>
-    </td>
-   <td> <button class="btn btn-primary" onclick="editTask(this)">Edit</button> </td>
+  <td>${task.title}</td>
+  <td>${task.description}</td>
+  <td>${task.deadline}</td>
+  <td>${task.priority}</td>
+  <td>${task.category}</td>
+  <td>
+  <button class="btn btn-success" onclick="markAsCompleted(this)">
+  <i class="fa-solid fa-circle-check"></i>
+  </button>
+  </td>
+  <td> <button class="btn btn-primary" onclick="editTask(this)">Edit</button> </td>
   <td>  <button class="btn btn-danger" onclick="deleteTask(this)">Delete</button> </td>
-    `;
+  `;
   taskList.append(taskRow);
 }
 
@@ -75,12 +75,14 @@ function editTask(button) {
   document.getElementById("category").value = cells[4].innerText;
 
   taskList.removeChild(taskRow);
+  alert("Are You Ready To Edit");
 }
 
 //function to delete task
 function deleteTask(button) {
   const taskRow = button.parentElement.parentElement;
   taskList.removeChild(taskRow);
+  alert("Are You Sure To Delete Task ");
 }
 
 //function to search task
